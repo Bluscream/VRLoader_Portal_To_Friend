@@ -17,7 +17,7 @@ namespace PortalToFriend
         public const string userPanelString = "MenuContent/Screens/UserInfo/User Panel/";
         private bool initialized = false;
         
-        void OnGUI() {
+        void Awake() {
             if (initialized) return;
             var userPanel = GameObject.Find(userPanelString);
             Utils.Log("Mod.OnGUI and not initialized");
