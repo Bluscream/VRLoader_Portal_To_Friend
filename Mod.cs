@@ -46,7 +46,7 @@ namespace PortalToFriend
             var playlists = GameObject.Find("MenuContent/Screens/UserInfo/User Panel/Playlists");
             UserDropPortal = Instantiate(playlistButton, playlists.transform);
             UserDropPortal.transform.SetParent(userPanel.transform);
-            UserDropPortal.transform.position += new Vector3(0, 0.065f, 0);
+            UserDropPortal.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, 75);
             UserDropPortal.GetComponentInChildren<Text>().text = "Drop Portal to Instance";
             UserDropPortal.GetComponentInChildren<Button>().onClick = new Button.ButtonClickedEvent();
             UserDropPortal.GetComponentInChildren<Button>().onClick.AddListener(DropPortalToUserClicked);
