@@ -18,18 +18,18 @@ namespace PortalToFriend
         public const string userPanelString = "MenuContent/Screens/UserInfo/User Panel/";
         private bool initialized = false;
         
-        void OnGUI() {
+        void Awake() {
             if (initialized) return;
             var userPanel = GameObject.Find(userPanelString);
-            Utils.Log("Mod.OnGUI and not initialized");
+            // Utils.Log("Mod.Awake and not initialized");
             if (userPanel is null) return;
             initialized = true;
             Init();
         }
 
         private void Init() {
-            Utils.Log("Mod.Init");
-            new GameObject("mod").AddComponent<ModComponent>();
+            Utils.Log($"Initializing {ModInfo.Name} v{ModInfo.Version} by {ModInfo.Author}");
+            new GameObject("DropPortalToFriend").AddComponent<ModComponent>();
         }
     }
 
